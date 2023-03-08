@@ -9,7 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePage:"about_me"
+            activePage:""
         }
     }
 
