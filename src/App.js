@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 import React, {Component} from 'react';
+import StarWarsContext from "./utils/starWarsContext";
 
 class App extends Component {
     constructor(props) {
@@ -22,8 +23,15 @@ class App extends Component {
     render() {
         return (
             <div className={"container-fluid"}>
-                <Header changePage ={this.changeActivePage}/>
-                <Main page={this.state.activePage}/>
+                <StarWarsContext.Provider vaslue={{
+
+                    page:this.state.activePage,
+                    changePage: this.changeActivePage
+                }}>
+                    <Header/>
+                    <Main/>
+                </StarWarsContext.Provider>
+
                 <Footer/>
             </div>
         );
